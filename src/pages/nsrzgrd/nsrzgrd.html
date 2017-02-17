@@ -1,0 +1,36 @@
+<!--
+  Generated template for the NsrzgPage page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>纳税人资格认定查询</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <form [formGroup]="nsrxxForm" >
+    <ion-list>
+      <ion-item>
+        <ion-label>纳税人识别号</ion-label>
+        <ion-input type="text" formControlName="nsrsbh"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>纳税人名称</ion-label>
+        <ion-input type="text" formControlName="nsrmc" ></ion-input>
+      </ion-item>
+    </ion-list>
+    <button ion-button full (click)="queryNsrzg(nsrxxForm.value, $event)" >查询</button>
+  </form>
+
+  <ion-list>
+    <ion-item *ngFor="let item of returnObj" >
+      <ion-label> {{item.nsrsbh}}</ion-label>   <ion-label> {{item.nsrmc}}</ion-label> <ion-label> {{item.nsrzg}}</ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

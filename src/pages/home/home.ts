@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 
 import { NavController } from 'ionic-angular';
+import {NsrzgrdPage} from "../nsrzgrd/nsrzgrd"
 
 @Component({
   selector: 'page-home',
@@ -12,4 +13,8 @@ export class HomePage {
 
   }
 
+turnToNsrzgrd(){
+  this.navCtrl.push(NsrzgrdPage);
+}
+  
 }
